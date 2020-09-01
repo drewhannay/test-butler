@@ -9,27 +9,144 @@
                     "version": "27.0.0",
                     "rules": [
                         {
+                            "id": "AndroidLint/AllowBackup",
+                            "shortDescription": {
+                                "text": "AllowBackup/FullBackupContent Problems",
+                                "markdown": "AllowBackup/FullBackupContent Problems"
+                            },
+                            "fullDescription": {
+                                "text": "The `allowBackup` attribute determines if an application's data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup\n\nBy default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.\n\nThis may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.\n\nSetting `allowBackup=\"false\"` opts an application out of both backup and restore.\n\nTo fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)\"`.\n\nIf not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup.",
+                                "markdown": "The `allowBackup` attribute determines if an application's data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup\n\nBy default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.\n\nThis may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.\n\nSetting `allowBackup=\"false\"` opts an application out of both backup and restore.\n\nTo fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)\"`.\n\nIf not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning"
+                            },
+                            "help": {
+                                "text": "The `allowBackup` attribute determines if an application's data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup\n\nBy default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.\n\nThis may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.\n\nSetting `allowBackup=\"false\"` opts an application out of both backup and restore.\n\nTo fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)\"`.\n\nIf not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup.",
+                                "markdown": "The `allowBackup` attribute determines if an application's data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup\n\nBy default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.\n\nThis may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.\n\nSetting `allowBackup=\"false\"` opts an application out of both backup and restore.\n\nTo fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)\"`.\n\nIf not set to false, and if targeting API 23 or later, lint will also warn that you should set `android:fullBackupContent` to configure auto backup."
+                            }
+                        },
+                        {
+                            "id": "AndroidLint/MissingApplicationIcon",
+                            "shortDescription": {
+                                "text": "Missing application icon",
+                                "markdown": "Missing application icon"
+                            },
+                            "fullDescription": {
+                                "text": "You should set an icon for the application as whole because there is no default. This attribute must be set as a reference to a drawable resource containing the image (for example `@drawable/icon`).",
+                                "markdown": "You should set an icon for the application as whole because there is no default. This attribute must be set as a reference to a drawable resource containing the image (for example `@drawable/icon`)."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning"
+                            },
+                            "help": {
+                                "text": "You should set an icon for the application as whole because there is no default. This attribute must be set as a reference to a drawable resource containing the image (for example `@drawable/icon`).",
+                                "markdown": "You should set an icon for the application as whole because there is no default. This attribute must be set as a reference to a drawable resource containing the image (for example `@drawable/icon`)."
+                            }
+                        },
+                        {
+                            "id": "AndroidLint/GoogleAppIndexingWarning",
+                            "shortDescription": {
+                                "text": "Missing support for Firebase App Indexing",
+                                "markdown": "Missing support for Firebase App Indexing"
+                            },
+                            "fullDescription": {
+                                "text": "Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.",
+                                "markdown": "Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning"
+                            },
+                            "help": {
+                                "text": "Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.",
+                                "markdown": "Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search."
+                            }
+                        },
+                        {
                             "id": "AndroidLint/TextFields",
                             "shortDescription": {
                                 "text": "Missing `inputType` or `hint`",
                                 "markdown": "Missing `inputType` or `hint`"
                             },
                             "fullDescription": {
-                                "text": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field. The lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes. If you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`.",
-                                "markdown": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field. The lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes. If you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`."
+                                "text": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field.\n\nThe lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes.\n\nIf you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`.",
+                                "markdown": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field.\n\nThe lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes.\n\nIf you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`."
                             },
                             "defaultConfiguration": {
                                 "level": "warning"
                             },
                             "help": {
-                                "text": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field. The lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes. If you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`.",
-                                "markdown": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field. The lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes. If you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`."
+                                "text": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field.\n\nThe lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes.\n\nIf you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`.",
+                                "markdown": "Providing an `inputType` attribute on a text field improves usability because depending on the data to be input, optimized keyboards can be shown to the user (such as just digits and parentheses for a phone number). Similarly,a hint attribute displays a hint to the user for what is expected in the text field.\n\nThe lint detector also looks at the `id` of the view, and if the id offers a hint of the purpose of the field (for example, the `id` contains the phrase `phone` or `email`), then lint will also ensure that the `inputType` contains the corresponding type attributes.\n\nIf you really want to keep the text field generic, you can suppress this warning by setting `inputType=\"text\"`."
                             }
                         }
                     ]
                 }
             },
             "results": [
+                {
+                    "ruleId": "AndroidLint/AllowBackup",
+                    "message": {
+                        "text": "AllowBackup/FullBackupContent Problems"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                },
+                                "region": {
+                                    "startLine": 14,
+                                    "startColumn": 5,
+                                    "endLine": 14,
+                                    "endColumn": 5
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "AndroidLint/MissingApplicationIcon",
+                    "message": {
+                        "text": "Missing application icon"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                },
+                                "region": {
+                                    "startLine": 14,
+                                    "startColumn": 5,
+                                    "endLine": 14,
+                                    "endColumn": 5
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "AndroidLint/GoogleAppIndexingWarning",
+                    "message": {
+                        "text": "Missing support for Firebase App Indexing"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                },
+                                "region": {
+                                    "startLine": 14,
+                                    "startColumn": 5,
+                                    "endLine": 14,
+                                    "endColumn": 5
+                                }
+                            }
+                        }
+                    ]
+                },
                 {
                     "ruleId": "AndroidLint/TextFields",
                     "message": {
@@ -39,13 +156,13 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "test-butler-demo/src/main/res/layout/activity_main.xml"
+                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/res/layout/activity_main.xml"
                                 },
                                 "region": {
                                     "startLine": 50,
                                     "startColumn": 5,
                                     "endLine": 50,
-                                    "endColumn": 14
+                                    "endColumn": 5
                                 }
                             }
                         }
