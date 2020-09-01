@@ -93,7 +93,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -114,7 +114,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -135,7 +135,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -156,7 +156,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "/Users/dhannay/GithubCode/test-butler-fork/test-butler-demo/src/main/res/layout/activity_main.xml"
+                                    "uri": "test-butler-demo/src/main/res/layout/activity_main.xml"
                                 },
                                 "region": {
                                     "startLine": 50,

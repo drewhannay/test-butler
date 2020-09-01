@@ -18,6 +18,7 @@ android {
         textReport true
         textOutput 'stdout'
         abortOnError true
+        absolutePaths false
         disable 'OldTargetApi', 'GradleDependency'
     }
 }
