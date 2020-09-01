@@ -93,7 +93,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -114,7 +114,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -135,7 +135,7 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "test-butler-demo/src/main/AndroidManifest.xml"
+                                    "uri": "src/main/AndroidManifest.xml"
                                 },
                                 "region": {
                                     "startLine": 14,
@@ -156,12 +156,33 @@
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "test-butler-demo/src/main/res/layout/activity_main.xml"
+                                    "uri": "src/main/res/layout/activity_main.xml"
                                 },
                                 "region": {
                                     "startLine": 50,
                                     "startColumn": 5,
                                     "endLine": 50,
+                                    "endColumn": 5
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "AndroidLint/TextFields",
+                    "message": {
+                        "text": "Missing `inputType` or `hint`"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "src/main/res/layout/activity_main.xml"
+                                },
+                                "region": {
+                                    "startLine": 57,
+                                    "startColumn": 5,
+                                    "endLine": 57,
                                     "endColumn": 5
                                 }
                             }
